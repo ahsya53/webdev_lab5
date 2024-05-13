@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Book Information</title>
+  <script>
+    function displayInformation() {
+      var jsonData = {
+    "book1": {
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "publicationYear": 1925,
+        "genres": ["Fiction", "Classics"]
+    },
+
+    "book2": {
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "publicationYear": 1960,
+        "genres": ["Fiction", "Comic-of-Age"]
+    }    
+};
+
+      var book1 = jsonData.book1;
+      var book2 = jsonData.book2;
+
+      var output = document.getElementById("output");
+
+      // Display Book 1 information
+      var book1Html = "<h2>Book 1</h2>";
+      book1Html += "<p><strong>Title:</strong> " + book1.title + "</p>";
+      book1Html += "<p><strong>Author:</strong> " + book1.author + "</p>";
+      book1Html += "<p><strong>Genres:</strong> " + book1.genres.join(", ") + "</p>";
+
+      // Display Book 1 information
+      var book2Html = "<h2>Book 2</h2>";
+      book2Html += "<p><strong>Title:</strong> " + book2.title + "</p>";
+      book2Html += "<p><strong>Author:</strong> " + book2.author + "</p>";
+      book2Html += "<p><strong>Genres:</strong> " + book2.genres.join(", ") + "</p>";
+
+      output.innerHTML = book1Html + book2Html;
+    }
+  </script>
+</head>
+
+<body onload="displayInformation()">
+  <div id="output"></div>
+</body>
+</html>
